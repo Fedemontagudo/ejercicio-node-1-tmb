@@ -24,7 +24,7 @@ const preguntas = [
         value: "Coordenadas"
       },
       {
-        name: "fecha de inaguracion",
+        name: "Fecha de inaguracion",
         value: "fecha de inaguracion"
       }
     ],
