@@ -9,8 +9,8 @@ Luego se le preguntará "¿Qué línea quiere consultar?".
 Además de las preguntas, el usuario podrá pasar dos argumentos por línea de comandos: --color #548273 --abrev Ambos son opcionales.
 Una vez recogida toda la información del usuario, la app tiene que conectarse a la API de TMB para consultar si existe la línea escogida por el usuario. Para ello se usará el endpoint que devuelve todas las líneas de metro.
 Si la línea no existe: en caso de que el usuario haya elegido que le informemos de los errores, se debe imprimir por consola un error diciendo, en rojo y en negrita, que no existe la línea, y se terminará el programa. Si ha elºegido que no le informemos de los errores, simplemente se terminará el programa.
-
 Si la línea existe, entonces imprimiremos un primer mensaje con el nombre de la línea y la descripción. El color usado para este texto y todos los siguientes será: si el usuario ha pasado un código de color por línea de comandos, ese color; si no ha pasado ninguno, será el color de la línea de metro (lo da la API).
+
 Luego la app debe conectarse a la API de TMB a pedir todas las paradas de metro de la línea seleccionada.
 Debe imprimir todos los nombres de las paradas. Si el usuario ha pasado el argumento --abrev por consola, entonces sólo se imprimirán los tres primeros caracteres del nombre de la parada, seguidos de un punto.
 Si el usuario eligió información extra (coordenadas y/o fecha de inauguración), deben imprimirse al lado de cada parada.

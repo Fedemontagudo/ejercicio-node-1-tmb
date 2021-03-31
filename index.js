@@ -36,7 +36,13 @@ inquirer.prompt(preguntas)
               process.exit(0);
             }
           }
-          console.log(chalk.hex(`${color === true ? color : `${linea.properties.COLOR_LINIA}`}`)(`Nom de la linia: ${linea.properties.NOM_LINIA} , descripció: ${linea.properties.DESC_LINIA}`));
+          console.log(chalk.hex(`${color === true ? color : `${linea.properties.COLOR_LINIA}`}`)(`Nombre de la linea: ${linea.properties.NOM_LINIA} , descripcion: ${linea.properties.DESC_LINIA}`));
+          fetch(`${process.env.URL}/${linea.properties.CODI_LINIA}/estacions?app_id=${process.env.APP_ID}?app_key${process.env.APP_KEY}`)
+            // somehow este fetch no esta bien hecho, si en vez del template literals le meto una url de prueba a chapa me devuelve las paradas
+            .then(resp => resp.json())
+            .then(paradas => {
+              console.log(paradas);
+            });
         });
     }
   });
