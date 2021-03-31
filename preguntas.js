@@ -37,11 +37,10 @@ const preguntas = [
     when: respuestas => respuestas.tipo === "Metro"
   },
   {
-    type: "list",
+    type: "input",
     message: "¿Qué línea quiere consultar?",
     name: "lineasConsulta",
     when: respuestas => respuestas.tipo === "Metro",
-    choices: [],
   }
 ];
 
