@@ -12,7 +12,36 @@ const preguntas = [
         name: "Bus",
         value: "Bus"
       }
-    ]
+    ],
+  },
+  {
+    type: "checkbox",
+    message: "¿Qué información extra quiere obtener de cada parada?",
+    name: "informacionParada",
+    choices: [
+      {
+        name: "Coordenadas",
+        value: "Coordenadas"
+      },
+      {
+        name: "fecha de inaguracion",
+        value: "fecha de inaguracion"
+      }
+    ],
+    when: respuestas => respuestas.tipo === "Metro"
+  },
+  {
+    type: "confirm",
+    message: "¿Quiere que le informemos de los errores?",
+    name: "informacionErrores",
+    when: respuestas => respuestas.tipo === "Metro"
+  },
+  {
+    type: "list",
+    message: "¿Qué línea quiere consultar?",
+    name: "lineasConsulta",
+    when: respuestas => respuestas.tipo === "Metro",
+    choices: [],
   }
 ];
 
