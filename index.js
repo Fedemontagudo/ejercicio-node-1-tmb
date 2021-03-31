@@ -39,8 +39,11 @@ inquirer.prompt(preguntas)
           console.log(chalk.hex(`${color === true ? color : `${linea.properties.COLOR_LINIA}`}`)(`Nombre de la linea: ${linea.properties.NOM_LINIA} , descripcion: ${linea.properties.DESC_LINIA}`));
           fetch(`${process.env.URL}/${linea.properties.CODI_LINIA}/estacions?app_id=${process.env.APP_ID}?app_key${process.env.APP_KEY}`)
             // somehow este fetch no esta bien hecho, si en vez del template literals le meto una url de prueba a chapa me devuelve las paradas
+            // probar de meter url a chapa
             .then(resp => resp.json())
             .then(paradas => {
+              // imprimir nombres de paradas (si se ha pasado -a o --abrev hacer un map + slice de las paradas)
+              // imprimir info extra (coordenadas y/o fecha de inaguracion) al lado de cada parada
               console.log(paradas);
             });
         });
